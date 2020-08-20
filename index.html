@@ -589,7 +589,43 @@
 <p><code>repository</code> 修改为你自己的 github 项目地址。接着需要先安装 <code>deploy-git</code>，也就是部署的命令，这样你才能用命令部署到 GitHub。接着 <code>hexo clean</code> 清除了你之前生成的东西，也可以不加。 <code>hexo g</code> 顾名思义，生成静态文章是 <code>hexo generate</code> 的缩写 <code>hexo deploy</code> 部署文章，可以用 <code>hexo d</code> 缩写：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo clean | hexo g | hexo d</span><br></pre></td></tr></table></figure>
 
-<h3 id="备份博客源文件"><a href="#备份博客源文件" class="headerlink" title="备份博客源文件"></a>备份博客源文件</h3><p>将本地的 <code>hexo</code> 分支推送到远程：</p>
+<h3 id="备份博客源文件"><a href="#备份博客源文件" class="headerlink" title="备份博客源文件"></a>备份博客源文件</h3><p>博客源文件最好在远端备份一份，避免更换电脑后源文件丢失的尴尬。这里我选择将本地博客源文件上传至 github 保存，首先在 github 上新建一个仓库：</p>
+<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-20-155010.png" alt="本地博客源文件备份仓库"></p>
+<p>在本地博客地址执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">-- 这里替换为你的仓库地址</span><br><span class="line">git remote add origin git@github.com:ChristopherChan36/blog-post.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;init blog post&#x27;</span></span><br><span class="line">git push origin master -u</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
