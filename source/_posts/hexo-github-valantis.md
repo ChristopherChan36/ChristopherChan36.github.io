@@ -1,6 +1,7 @@
 ---
 title: Hexo + Github 博客搭建详细教程
 date: 2020-08-16 23:01:59
+abbrlink: hexo-github-valantis
 Tags: 
 - hexo
 Categories:

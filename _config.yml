@@ -3,13 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: '雪海的技术小窝'
+subtitle: '雪海觅隐香'
+description: '路尽隐香处，翩然雪海间，梅花仍犹在，雪海何处寻！'
+keywords: 
+  - Java
+  - Big Data
+author: CodingStartlet
+language: zh-CN
+timezone: '+8'
+favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
