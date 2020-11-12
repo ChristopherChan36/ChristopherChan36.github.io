@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - 雪海的技术小窝</title>
+  <title>Hello World - 雪海的技术小窝</title>
   
 
   
@@ -81,7 +79,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -382,7 +380,7 @@
   
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -391,8 +389,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">Hello World</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -401,16 +399,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("blog" == "none") { // 移除封面 
+  if ("none" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("blog" == "blog") { // 半屏 
+    if ("none" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("blog" == "docs") { // 全屏 
+    } else if ("none" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -425,24 +423,11 @@
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -452,218 +437,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/articles/hexo-github-valantis.html">
-      Hexo + Github 博客搭建详细教程
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>请设置文章作者</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/blog/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>blog</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年8月16日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/articles/hexo-github-valantis.html" class="leancloud_visitors" data-flag-title="Hexo + Github 博客搭建详细教程">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/articles/hexo-github-valantis.html#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/articles/hexo-github-valantis.html">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前置环境"><a href="#前置环境" class="headerlink" title="前置环境"></a>前置环境</h2><h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>首先下载 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">Node.js</a>,直接在官网下载安装包，有稳定版和最新版两个版本可供下载，安装选项全部默认，一路 Next 就可以了。</p>
-<p>最后，安装完毕后，通过 <code>node -v</code> 和 <code>npm -v</code> 检查下版本号。</p>
-<p>当然，如果你跟我一样比较懒，可以使用包管理器进行安装，参考 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/package-manager/">NodeJs 包管理</a>，因为我是 macOS 系统，使用 Homebrew 进行安装 <code>brew install node</code>。如果对 Homebrew 不太了解的，可以看下 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/christopherchan/p/12444435.html">Mac 软件包管理器Homebrew使用指北</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<h3 id="添加国内镜像源"><a href="#添加国内镜像源" class="headerlink" title="添加国内镜像源"></a>添加国内镜像源</h3><p>为了提高 npm 运行速度需要添加淘宝源：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p>为了把本地的网页文件上传到github上面去，我们需要用到分布式版本控制工具————Git <a target="_blank" rel="noopener" href="https://git-scm.com/download/">下载地址</a></p>
-<p>Git 对于咱们开发人员是很常用的工具，这里就不过多阐述了。</p>
-<h3 id="GitHub-仓库"><a href="#GitHub-仓库" class="headerlink" title="GitHub 仓库"></a>GitHub 仓库</h3><p>接下来就去注册一个github账号，用来存放我们的网站。大多数小伙伴应该都有了吧，作为一个合格的程序猿（媛）还是要有一个的。</p>
-<p>打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA%EF%BC%9A">https://github.com/，新建一个项目，如下所示：</a></p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-150131.png" alt="New repository"></p>
-<p>然后如下图所示，输入自己的项目名字，后面一定要加<code>.github.io</code>后缀，README初始化也要勾上。**名称一定要和你的github名字完全一样，比如你github名字叫<code>abc</code>，那么仓库名字一定要是<code>abc.github.io</code>**。</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-150636.png" alt="yourname repo"></p>
-<p>建议还是选默认的 Public，我试了 Private，GitHub Pages 服务竟然是要收费。项目建成后，点击<code>Settings</code>，向下拉到最后有个<code>GitHub Pages</code>，点击<code>Choose a theme</code>选择一个主题。然后等一会儿，再回到<code>GitHub Pages</code>，会变成下面这样：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-155911.png" alt="GitHub Pages"></p>
-<p>点击那个链接，就会出现自己的网页啦，效果如下：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-160005.png" alt="pages preview"></p>
-<h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><p>Hexo 安装参考官方文档即可：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a></p>
-<p>安装完成后，输入 <code>hexo -v</code> 验证是否安装成功。</p>
-<p>然后就可以初始化我们的博客，输入<code>hexo init</code>初始化文件夹，接着输入 <code>npm install</code> 安装必备的组件。</p>
-<p>这样本地的博客配置就可以了，输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>打开本地服务器，然后浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E7%94%9F%E6%88%90%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%95%A6%EF%BC%81">http://localhost:4000/，就可以看到生成的博客啦！</a></p>
-<p>因为我打算使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis">Volantis</a> 主题，官方为 Mac 用户贴心准备了脚本完成全部流程（博客初始化+主题安装），所以这里我就偷个懒，直接采用脚本完成下载安装，如果你也是 Mac 用户，直接在要存放博客的文件地址下输入 <code>curl -s https://volantis.js.org/start | bash</code>即可安装完成。详情参考 <a target="_blank" rel="noopener" href="https://volantis.js.org/v3/getting-started/">Volantis 官网文档</a>。</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-15-032406.png" alt="volantis 安装脚本"></p>
-<p>本地博客效果图如下：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-15-032814.png" alt="volantis 本地效果图"></p>
-<h3 id="将-hexo-与-github-关联起来"><a href="#将-hexo-与-github-关联起来" class="headerlink" title="将 hexo 与 github 关联起来"></a>将 hexo 与 github 关联起来</h3><p>首先打开终端，输入如下命令在 git 上注册你的 github 账户名和邮箱</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Your github name and email</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxxx&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxx@163.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>Github 的用户名和邮箱自填。</p>
-<p>然后生成秘钥 SSH Key：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Your github email</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxxx@163.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>打开 GitHub，进入 <code>settings</code>页面，再点击 <code>SSH and GPG keys</code>，新建一个 SSH，名字随意，终端输入</p>
-<p><code>cat ~/.ssh/id_rsa.put</code></p>
-<p>将输入的内容复制到文本框，然后确定保存。</p>
-<p>输入 <code>ssh -T git@github.com</code>，如下图所示，即配置成功。</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-15-035131.png" alt="ssh 配置"></p>
-<p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。</p>
-<p>修改最后一行的配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/godweiyang/godweiyang.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p><code>repository</code> 修改为你自己的 github 项目地址。接着需要先安装 <code>deploy-git</code>，也就是部署的命令，这样你才能用命令部署到 GitHub。接着 <code>hexo clean</code> 清除了你之前生成的东西，也可以不加。 <code>hexo g</code> 顾名思义，生成静态文章是 <code>hexo generate</code> 的缩写 <code>hexo deploy</code> 部署文章，可以用 <code>hexo d</code> 缩写：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo clean | hexo g | hexo d</span><br></pre></td></tr></table></figure>
-
-<h3 id="备份博客源文件"><a href="#备份博客源文件" class="headerlink" title="备份博客源文件"></a>备份博客源文件</h3><p>博客源文件最好在远端备份一份，避免更换电脑后源文件丢失的尴尬。这里我选择将本地博客源文件上传至 github 保存，首先在 github 上新建一个仓库：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-20-155010.png" alt="本地博客源文件备份仓库"></p>
-<p>在本地博客地址执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">-- 这里替换为你的仓库地址</span><br><span class="line">git remote add origin git@github.com:ChristopherChan36/blog-post.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;init blog post&#x27;</span></span><br><span class="line">git push origin master -u</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
+  <h1 class="title">
     <a href="/articles/hello-world.html">
       Hello World
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -702,42 +480,6 @@
 
             
           
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/articles/hello-world.html" class="leancloud_visitors" data-flag-title="Hello World">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/articles/hello-world.html#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/articles/hello-world.html">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
         </div>
         
           <hr>
@@ -747,10 +489,11 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -764,91 +507,45 @@
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-	
-</div>
-<aside class='l_side'>
-  
+          
+            <div class='article_footer'>
+              
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">雪海的技术小窝</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
           
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://www.codingstarlet.cn/articles/hello-world.html>https://www.codingstarlet.cn/articles/hello-world.html</a></p>
           
         
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -858,67 +555,188 @@
   
     
     
+
+<section class="widget qrcode  desktop mobile">
   
 
-  <section class="widget category shadow desktop">
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-13T00:17:26+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月13日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.codingstarlet.cn/articles/hello-world.html&title=Hello World - 雪海的技术小窝&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.codingstarlet.cn/articles/hello-world.html&title=Hello World - 雪海的技术小窝&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.codingstarlet.cn/articles/hello-world.html&title=Hello World - 雪海的技术小窝&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/articles/hexo-github-valantis.html'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Hexo + Github 博客搭建详细教程</p>
+                <p class='content'>前置环境安装 Node.js首先下载 Node.js,直接在官网下载安装包，有稳定版和最新版两个版本可供下载，安装选项全部默认，一路 Next 就可以了。
+最后，安装完毕后，通过 node -v...</p>
+              </a>
+            
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/blog/" href="/categories/blog/"
-            id="categoriesblog"
-            ><div class='name'>blog</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
 
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
     </div>
