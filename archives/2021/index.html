@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：blog - 雪海的技术小窝</title>
+  <title>归档：2021 - 雪海的技术小窝</title>
   
 
   
@@ -382,7 +382,7 @@
   
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -401,16 +401,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
+  if ("blog" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("none" == "blog") { // 半屏 
+    if ("blog" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "docs") { // 全屏 
+    } else if ("blog" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -424,11 +424,9 @@
       
       
 
-
 <div class='l_main'>
-  
-    
-      
+	
+		
   <section class="post-list ">
     
       
@@ -453,8 +451,8 @@
         
           
   <h2 class="title">
-    <a href="/articles/hexo-github-valantis.html">
-      Hexo + Github 博客搭建详细教程
+    <a href="/articles/null.html">
+      MySQL事务锁等待超时 Lock wait timeout exceeded; try restarting transaction
     </a>
   </h2>
 
@@ -479,9 +477,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/blog/' rel="nofollow">
+    <a href='/categories/%E5%AE%9E%E6%88%98%E9%9A%8F%E7%AC%94/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>blog</p>
+      <p>实战随笔</p>
     </a>
   </div>
 
@@ -492,7 +490,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年8月16日</p>
+    <p>发布于：2021年1月12日</p>
   </a>
 </div>
 
@@ -509,7 +507,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/articles/hexo-github-valantis.html" class="leancloud_visitors" data-flag-title="Hexo + Github 博客搭建详细教程">
+      <span id="/articles/null.html" class="leancloud_visitors" data-flag-title="MySQL事务锁等待超时 Lock wait timeout exceeded; try restarting transaction">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -524,9 +522,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/articles/hexo-github-valantis.html#comments">
+  <a href="/articles/null.html#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/articles/hexo-github-valantis.html">0</span>
+    <span class="valine-comment-count" data-xid="/articles/null.html">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -551,88 +549,110 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前置环境"><a href="#前置环境" class="headerlink" title="前置环境"></a>前置环境</h2><h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>首先下载 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">Node.js</a>,直接在官网下载安装包，有稳定版和最新版两个版本可供下载，安装选项全部默认，一路 Next 就可以了。</p>
-<p>最后，安装完毕后，通过 <code>node -v</code> 和 <code>npm -v</code> 检查下版本号。</p>
-<p>当然，如果你跟我一样比较懒，可以使用包管理器进行安装，参考 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/package-manager/">NodeJs 包管理</a>，因为我是 macOS 系统，使用 Homebrew 进行安装 <code>brew install node</code>。如果对 Homebrew 不太了解的，可以看下 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/christopherchan/p/12444435.html">Mac 软件包管理器Homebrew使用指北</a>。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>工作中处理定时任务分发消息时出现的问题，在查找并解决问题的时候，将相关的问题博客收集整理，在此记录下，以便之后再遇到相同的问题，方便查阅。</p>
+</blockquote>
+<h2 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h2><p>问题出现的场景：</p>
+<ol>
+<li>在消息队列处理消息时，同一事务内先后对同一条数据进行了插入和更新操作;</li>
+<li>多台服务器操作同一数据库；</li>
+<li>瞬时出现高并发现象；</li>
+</ol>
+<p>导致数据更新或新增后数据经常自动回滚；表操作总报 <code>Lock wait timeout exceeded</code> 并长时间无反应</p>
+<h2 id="问题剖析"><a href="#问题剖析" class="headerlink" title="问题剖析"></a>问题剖析</h2><h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p><code>MySql Lock wait timeout exceeded</code> 这个问题我相信大家对它并不陌生，但是有很多人对它产生的原因以及处理吃的不是特别透，很多情况都是交给DBA去定位和处理问题，接下来我们就针对这个问题来展开讨论：</p>
+<p>Mysql造成锁的情况有很多，下面我们就列举一些情况：</p>
+<ol>
+<li>执行DML操作没有commit，再执行删除操作就会锁表。</li>
+<li>在同一事务内先后对同一条数据进行插入和更新操作。</li>
+<li>表索引设计不当，导致数据库出现死锁。</li>
+<li>长事务，阻塞DDL，继而阻塞所有同表的后续操作。</li>
+</ol>
+<p>但是要区分的是<code>Lock wait timeout exceeded</code>与<code>Dead Lock</code>是不一样。</p>
+<ul>
+<li><code>Lock wait timeout exceeded</code>：后提交的事务等待前面处理的事务释放锁，但是在等待的时候超过了mysql的锁等待时间，就会引发这个异常。</li>
+<li><code>Dead Lock</code>：两个事务互相等待对方释放相同资源的锁，从而造成的死循环，就会引发这个异常。</li>
+</ul>
+<p>还有一个要注意的是<code>innodb_lock_wait_timeout</code>与<code>lock_wait_timeout</code>也是不一样的。</p>
+<ul>
+<li><code>innodb_lock_wait_timeout</code>：innodb的dml操作的行级锁的等待时间</li>
+<li><code>lock_wait_timeout</code>：数据结构ddl操作的锁的等待时间</li>
+</ul>
+<p>那么如何查看innodb_lock_wait_timeout的具体值：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">VARIABLES</span> <span class="keyword">LIKE</span> <span class="string">&#x27;innodb_lock_wait_timeout&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="添加国内镜像源"><a href="#添加国内镜像源" class="headerlink" title="添加国内镜像源"></a>添加国内镜像源</h3><p>为了提高 npm 运行速度需要添加淘宝源：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>如何修改innode lock wait timeout的值，参数修改的范围有Session和Global，并且支持动态修改，可以有两种方法修改：</p>
+<p>方法一：</p>
+<p>通过下面语句修改</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> innodb_lock_wait_timeout=<span class="number">100</span>;</span><br><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> innodb_lock_wait_timeout=<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
 
-<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p>为了把本地的网页文件上传到github上面去，我们需要用到分布式版本控制工具————Git <a target="_blank" rel="noopener" href="https://git-scm.com/download/">下载地址</a></p>
-<p>Git 对于咱们开发人员是很常用的工具，这里就不过多阐述了。</p>
-<h3 id="GitHub-仓库"><a href="#GitHub-仓库" class="headerlink" title="GitHub 仓库"></a>GitHub 仓库</h3><p>接下来就去注册一个github账号，用来存放我们的网站。大多数小伙伴应该都有了吧，作为一个合格的程序猿（媛）还是要有一个的。</p>
-<p>打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA%EF%BC%9A">https://github.com/，新建一个项目，如下所示：</a></p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-150131.png" alt="New repository"></p>
-<p>然后如下图所示，输入自己的项目名字，后面一定要加<code>.github.io</code>后缀，README初始化也要勾上。**名称一定要和你的github名字完全一样，比如你github名字叫<code>abc</code>，那么仓库名字一定要是<code>abc.github.io</code>**。</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-150636.png" alt="yourname repo"></p>
-<p>建议还是选默认的 Public，我试了 Private，GitHub Pages 服务竟然是要收费。项目建成后，点击<code>Settings</code>，向下拉到最后有个<code>GitHub Pages</code>，点击<code>Choose a theme</code>选择一个主题。然后等一会儿，再回到<code>GitHub Pages</code>，会变成下面这样：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-155911.png" alt="GitHub Pages"></p>
-<p>点击那个链接，就会出现自己的网页啦，效果如下：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/06/2020-06-18-160005.png" alt="pages preview"></p>
-<h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><p>Hexo 安装参考官方文档即可：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a></p>
-<p>安装完成后，输入 <code>hexo -v</code> 验证是否安装成功。</p>
-<p>然后就可以初始化我们的博客，输入<code>hexo init</code>初始化文件夹，接着输入 <code>npm install</code> 安装必备的组件。</p>
-<p>这样本地的博客配置就可以了，输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>打开本地服务器，然后浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E7%94%9F%E6%88%90%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%95%A6%EF%BC%81">http://localhost:4000/，就可以看到生成的博客啦！</a></p>
-<p>因为我打算使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis">Volantis</a> 主题，官方为 Mac 用户贴心准备了脚本完成全部流程（博客初始化+主题安装），所以这里我就偷个懒，直接采用脚本完成下载安装，如果你也是 Mac 用户，直接在要存放博客的文件地址下输入 <code>curl -s https://volantis.js.org/start | bash</code>即可安装完成。详情参考 <a target="_blank" rel="noopener" href="https://volantis.js.org/v3/getting-started/">Volantis 官网文档</a>。</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-15-032406.png" alt="volantis 安装脚本"></p>
-<p>本地博客效果图如下：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-15-032814.png" alt="volantis 本地效果图"></p>
-<h3 id="将-hexo-与-github-关联起来"><a href="#将-hexo-与-github-关联起来" class="headerlink" title="将 hexo 与 github 关联起来"></a>将 hexo 与 github 关联起来</h3><p>首先打开终端，输入如下命令在 git 上注册你的 github 账户名和邮箱</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Your github name and email</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxxx&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxxx@163.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p><em>ps. 注意global的修改对当前线程是不生效的，只有建立新的连接才生效。</em></p>
+<p>方法二：</p>
+<p>修改参数文件<code>/etc/my.cnf</code> <code>innodb_lock_wait_timeout = 50</code></p>
+<p><em>ps. <code>innodb_lock_wait_timeout</code>指的是事务等待获取资源等待的最长时间，超过这个时间还未分配到资源则会返回应用失败； 当锁等待超过设置时间的时候，就会报如下的错误；<code>ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</code>。其参数的时间单位是秒，最小可设置为1s(一般不会设置得这么小)，最大可设置1073741824秒，默认安装时这个值是50s(默认参数设置)。</em></p>
+<h3 id="原因总结"><a href="#原因总结" class="headerlink" title="原因总结"></a>原因总结</h3><ul>
+<li>在高并发的情况下，Spring事物造成数据库死锁，后续操作超时抛出异常。</li>
+<li>Mysql数据库采用InnoDB模式，默认参数:innodb_lock_wait_timeout设置锁等待的时间是50s，一旦数据库锁超过这个时间就会报错。</li>
+</ul>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li>应急方法：<code>show full processlist;</code> <code>kill</code>掉出现问题的进程。 <em>ps.有的时候通过processlist是看不出哪里有锁等待的，当两个事务都在commit阶段是无法体现在processlist上</em></li>
+<li>根治方法：<code>select * from information_schema.innodb_trx;</code>查看有是哪些事务占据了表资源。 <em>ps.通过这个办法就需要对innodb有一些了解才好处理</em></li>
+<li>增加锁等待时间，即增大下面配置项参数值，单位为秒（s） <code>innodb_lock_wait_timeout=500</code></li>
+<li>优化存储过程,事务避免过长时间的等待</li>
+</ul>
+<p>说起来很简单找到它杀掉它就搞定了，但是实际上并没有想象的这么简单，当问题出现要分析问题的原因，通过原因定位业务代码可能某些地方实现的有问题，从而来避免今后遇到同样的问题。</p>
+<h2 id="扩展资料"><a href="#扩展资料" class="headerlink" title="扩展资料"></a>扩展资料</h2><h3 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h3><ol>
+<li>锁等待超时。是当前事务在等待其它事务释放锁资源造成的。可以找出锁资源竞争的表和语句，优化SQL，创建索引等。如果还是不行，可以适当减少并发线程数。</li>
+<li>事务在等待给某个表加锁时超时，估计是表正被另的进程锁住一直没有释放。<br>可以用 SHOW INNODB STATUS/G; 看一下锁的情况。</li>
+<li>搜索解决之道，在管理节点的[ndbd default]区加：<br>TransactionDeadLockDetectionTimeOut=10000（设置 为10秒）默认是1200（1.2秒）</li>
+<li>InnoDB会自动的检测死锁进行回滚，或者终止死锁的情况。</li>
+</ol>
+<blockquote>
+<p>InnoDB automatically detects transaction deadlocks and rolls back a transaction or transactions to break the deadlock. InnoDB tries to pick small transactions to roll back, where the size of a transaction is determined by the number of rows inserted, updated, or deleted.</p>
+<p>如果参数innodb_table_locks=1并且autocommit=0时，InnoDB会留意表的死锁，和MySQL层面的行级锁。另外，InnoDB不会检测MySQL的Lock Tables命令和其他存储引擎死锁。你应该设置innodb_lock_wait_timeout来解决这种情况。<br>innodb_lock_wait_timeout是Innodb放弃行级锁的超时时间。</p>
+</blockquote>
+<h3 id="Innodb-表的解释"><a href="#Innodb-表的解释" class="headerlink" title="Innodb_* 表的解释"></a>Innodb_* 表的解释</h3><p><code>Mysql</code>的<code>InnoDB</code>存储引擎是支持事务的，事务开启后没有被主动<code>Commit</code>。导致该资源被长期占用，其他事务在抢占该资源时，因上一个事务的锁而导致抢占失败！因此出现 <code>Lock wait timeout exceeded</code></p>
+<p>下面几张表是innodb的事务和锁的信息表，理解这些表就能很好的定位问题。</p>
+<ul>
+<li><code>innodb_trx</code> ## 当前运行的所有事务 </li>
+<li><code>innodb_locks</code> ## 当前出现的锁 </li>
+<li><code>innodb_lock_waits</code> ## 锁等待的对应关系</li>
+</ul>
+<p>下面对 <code>innodb_trx</code> 表的每个字段进行解释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">trx_id：事务ID。</span><br><span class="line">trx_state：事务状态，有以下几种状态：RUNNING、LOCK WAIT、ROLLING BACK 和 COMMITTING。</span><br><span class="line">trx_started：事务开始时间。</span><br><span class="line">trx_requested_lock_id：事务当前正在等待锁的标识，可以和 INNODB_LOCKS 表 JOIN 以得到更多详细信息。</span><br><span class="line">trx_wait_started：事务开始等待的时间。</span><br><span class="line">trx_weight：事务的权重。</span><br><span class="line">trx_mysql_thread_id：事务线程 ID，可以和 PROCESSLIST 表 JOIN。</span><br><span class="line">trx_query：事务正在执行的 SQL 语句。</span><br><span class="line">trx_operation_state：事务当前操作状态。</span><br><span class="line">trx_tables_in_use：当前事务执行的 SQL 中使用的表的个数。</span><br><span class="line">trx_tables_locked：当前执行 SQL 的行锁数量。</span><br><span class="line">trx_lock_structs：事务保留的锁数量。</span><br><span class="line">trx_lock_memory_bytes：事务锁住的内存大小，单位为 BYTES。</span><br><span class="line">trx_rows_locked：事务锁住的记录数。包含标记为 DELETED，并且已经保存到磁盘但对事务不可见的行。</span><br><span class="line">trx_rows_modified：事务更改的行数。</span><br><span class="line">trx_concurrency_tickets：事务并发票数。</span><br><span class="line">trx_isolation_level：当前事务的隔离级别。</span><br><span class="line">trx_unique_checks：是否打开唯一性检查的标识。</span><br><span class="line">trx_foreign_key_checks：是否打开外键检查的标识。</span><br><span class="line">trx_last_foreign_key_error：最后一次的外键错误信息。</span><br><span class="line">trx_adaptive_hash_latched：自适应散列索引是否被当前事务锁住的标识。</span><br><span class="line">trx_adaptive_hash_timeout：是否立刻放弃为自适应散列索引搜索 LATCH 的标识。</span><br></pre></td></tr></table></figure>
 
-<p>Github 的用户名和邮箱自填。</p>
-<p>然后生成秘钥 SSH Key：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Your github email</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxxx@163.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>下面对 <code>innodb_locks</code> 表的每个字段进行解释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lock_id：锁 ID。</span><br><span class="line">lock_trx_id：拥有锁的事务 ID。可以和 INNODB_TRX 表 JOIN 得到事务的详细信息。</span><br><span class="line">lock_mode：锁的模式。有如下锁类型：行级锁包括：S、X、IS、IX，分别代表：共享锁、排它锁、意向共享锁、意向排它锁。表级锁包括：S_GAP、X_GAP、IS_GAP、IX_GAP 和 AUTO_INC，分别代表共享间隙锁、排它间隙锁、意向共享间隙锁、意向排它间隙锁和自动递增锁。</span><br><span class="line">lock_type：锁的类型。RECORD 代表行级锁，TABLE 代表表级锁。</span><br><span class="line">lock_table：被锁定的或者包含锁定记录的表的名称。</span><br><span class="line">lock_index：当 LOCK_TYPE&#x3D;’RECORD’ 时，表示索引的名称；否则为 NULL。</span><br><span class="line">lock_space：当 LOCK_TYPE&#x3D;’RECORD’ 时，表示锁定行的表空间 ID；否则为 NULL。</span><br><span class="line">lock_page：当 LOCK_TYPE&#x3D;’RECORD’ 时，表示锁定行的页号；否则为 NULL。</span><br><span class="line">lock_rec：当 LOCK_TYPE&#x3D;’RECORD’ 时，表示一堆页面中锁定行的数量，亦即被锁定的记录号；否则为 NULL。</span><br><span class="line">lock_data：当 LOCK_TYPE&#x3D;’RECORD’ 时，表示锁定行的主键；否则为NULL。</span><br></pre></td></tr></table></figure>
 
-<p>打开 GitHub，进入 <code>settings</code>页面，再点击 <code>SSH and GPG keys</code>，新建一个 SSH，名字随意，终端输入</p>
-<p><code>cat ~/.ssh/id_rsa.put</code></p>
-<p>将输入的内容复制到文本框，然后确定保存。</p>
-<p>输入 <code>ssh -T git@github.com</code>，如下图所示，即配置成功。</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-15-035131.png" alt="ssh 配置"></p>
-<p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。</p>
-<p>修改最后一行的配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/godweiyang/godweiyang.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>下面对 <code>innodb_lock_waits</code> 表的每个字段进行解释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">requesting_trx_id：请求事务的 ID。</span><br><span class="line">requested_lock_id：事务所等待的锁定的 ID。可以和 INNODB_LOCKS 表 JOIN。</span><br><span class="line">blocking_trx_id：阻塞事务的 ID。</span><br><span class="line">blocking_lock_id：某一事务的锁的 ID，该事务阻塞了另一事务的运行。可以和 INNODB_LOCKS 表 JOIN。</span><br></pre></td></tr></table></figure>
 
-<p><code>repository</code> 修改为你自己的 github 项目地址。接着需要先安装 <code>deploy-git</code>，也就是部署的命令，这样你才能用命令部署到 GitHub。接着 <code>hexo clean</code> 清除了你之前生成的东西，也可以不加。 <code>hexo g</code> 顾名思义，生成静态文章是 <code>hexo generate</code> 的缩写 <code>hexo deploy</code> 部署文章，可以用 <code>hexo d</code> 缩写：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo clean | hexo g | hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="锁等待的处理步骤"><a href="#锁等待的处理步骤" class="headerlink" title="锁等待的处理步骤"></a>锁等待的处理步骤</h3><ul>
+<li>直接查看 innodb_lock_waits 表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> innodb_lock_waits;</span><br></pre></td></tr></table></figure>
 
-<h3 id="备份博客源文件"><a href="#备份博客源文件" class="headerlink" title="备份博客源文件"></a>备份博客源文件</h3><p>博客源文件最好在远端备份一份，避免更换电脑后源文件丢失的尴尬。这里我选择将本地博客源文件上传至 github 保存，首先在 github 上新建一个仓库：</p>
-<p><img src="https://blog-figure-bed.oss-cn-shanghai.aliyuncs.com/2020/08/2020-08-20-155010.png" alt="本地博客源文件备份仓库"></p>
-<p>在本地博客地址执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">-- 这里替换为你的仓库地址</span><br><span class="line">git remote add origin git@github.com:ChristopherChan36/blog-post.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;init blog post&#x27;</span></span><br><span class="line">git push origin master -u</span><br></pre></td></tr></table></figure>
+<ul>
+<li>innodb_locks 表和 innodb_lock_waits 表结合：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> innodb_locks <span class="keyword">WHERE</span> lock_trx_id <span class="keyword">IN</span> (<span class="keyword">SELECT</span> blocking_trx_id <span class="keyword">FROM</span> innodb_lock_waits);</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>innodb_locks 表 JOIN innodb_lock_waits 表:</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> innodb_locks.* <span class="keyword">FROM</span> innodb_locks <span class="keyword">JOIN</span> innodb_lock_waits <span class="keyword">ON</span> (innodb_locks.lock_trx_id = innodb_lock_waits.blocking_trx_id);</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>查询 innodb_trx 表:</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> trx_id, trx_requested_lock_id, trx_mysql_thread_id, trx_query <span class="keyword">FROM</span> innodb_trx <span class="keyword">WHERE</span> trx_state = <span class="string">&#x27;LOCK WAIT&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>trx_mysql_thread_id 即kill掉事务线程 ID</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">ENGINE</span> <span class="keyword">INNODB</span> <span class="keyword">STATUS</span> ;</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">PROCESSLIST</span> ;</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>从上述方法中得到了相关信息，我们可以得到发生锁等待的线程 ID，然后将其 KILL 掉。 KILL 掉发生锁等待的线程。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill ID;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -657,9 +677,7 @@
   
 
 
-    
-  
-
+	
 </div>
 <aside class='l_side'>
   
@@ -789,6 +807,14 @@
 
 </aside>
 
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
     </div>
