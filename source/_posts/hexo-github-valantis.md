@@ -2,7 +2,7 @@
 title: Hexo + Github 博客搭建详细教程
 abbrlink: hexo-github-valantis
 tags: hexo
-categories: blog
+categories: 博客专属
 ---
 
 ## 前置环境
