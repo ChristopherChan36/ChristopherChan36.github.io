@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021/1 - 雪海的技术小窝</title>
+  <title>分类：博客专属 - 雪海的技术小窝</title>
   
 
   
@@ -58,7 +58,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +309,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper  dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -384,9 +384,11 @@
       <div class='body-wrapper' id="pjax-container">
         
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list">
     
       
@@ -406,24 +408,17 @@
   
     
     <h2 class="article-title" >
-      <a href="/articles/null.html">
-        MySQL事务锁等待超时 Lock wait timeout exceeded; try restarting transaction
+      <a href="/articles/hexo-github-valantis.html">
+        Hexo + Github 博客搭建详细教程
       </a>
     </h2>
   
   <div class='md'>
     
       
-        
-工作中处理定时任务分发消息时出现的问题，在查找并解决问题的时候，将相关的问题博客收集整理，在此记录下，以便之后再遇到相同的问题，方便查阅。
-
-问题场景问题出现的场景：
-
-在消息队列处理消息时，同一事务内先后对同一条数据进行了插入和更新操作;
-多台服务器操作同一数据库；
-瞬时出现高并发现象；
-
-导致数据更新或新增后数据经常自动回滚；表操作总报 Lock wait timeout exceed...
+        前置环境安装 Node.js首先下载 Node.js,直接在官网下载安装包，有稳定版和最新版两个版本可供下载，安装选项全部默认，一路 Next 就可以了。
+最后，安装完毕后，通过 node -v 和 npm -v 检查下版本号。
+当然，如果你跟我一样比较懒，可以使用包管理器进行安装，参考 NodeJs 包管理，因为我是 macOS 系统，使用 Homebrew 进行安装 brew insta...
       
     
   </div>
@@ -431,15 +426,15 @@
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2021-01-12</time>
+        <time>2020-08-16</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AE%9E%E6%88%98%E9%9A%8F%E7%AC%94/">实战随笔</a>
+          <a class="category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E4%B8%93%E5%B1%9E/">博客专属</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/articles/null.html'>
+          <a class='readmore' href='/articles/hexo-github-valantis.html'>
             阅读全文
           </a>
         </div>
@@ -459,7 +454,8 @@
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -608,7 +604,7 @@
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
